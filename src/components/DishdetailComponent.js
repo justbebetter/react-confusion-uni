@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import {
   Card,
   CardImg,
-  CardImgOverlay,
+  CardText,
   CardBody,
   CardTitle,
-  CardText,
+  Breadcrumb,
+  BreadcrumbItem,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 class DishDetail extends Component {
   constructor(props) {
@@ -64,12 +66,28 @@ class DishDetail extends Component {
       return <div></div>;
     }
     const dishItem = this.renderDish(dish);
-    const dishComments = this.renderComments(dish.comments);
+    const dishComments = this.renderComments(this.dish.comments);
     return (
       <div className="container">
         <div className="row">
-          {dishItem}
-          {dishComments}
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link to="/menu">Menu</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+          </Breadcrumb>
+          <div className="col-12">
+            <h3>{this.props.dish.name}</h3>
+            <hr />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-5 m-1">
+            <this.render dish={this.props.dish} />
+          </div>
+          <div className="col-12 col-md-5 m-1">
+            <this.render comments={this.props.comments} />
+          </div>
         </div>
       </div>
     );
