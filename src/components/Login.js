@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 function Login() {
-  const [name, setName] = useState("");
+  const formRef = useRef(null);
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}`);
+    const formData = new FormData(formRef.current);
+    alert(`Name: ${formData.get(`name`)}`);
+    console.log(`Name: ${formData.get(`name`)}`);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form ref={formRef} onSubmit={handleSubmit}>
       <label className="col-lg-4">
         Name:
         <input
+          name="name"
           placeholder="Enter your name "
           class="form-control"
           type="text"
-          value={name}
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
         ></input>
       </label>
       <button type="submit" className="btn btn-primary">
