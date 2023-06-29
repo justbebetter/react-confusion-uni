@@ -7828,7 +7828,7 @@ react-router-dom@^6.14.0:
     "@remix-run/router" "1.7.0"
     react-router "6.14.0"
 
-react-router@6.14.0:
+react-router@^6.14.0, react-router@6.14.0:
   version "6.14.0"
   resolved "https://registry.npmjs.org/react-router/-/react-router-6.14.0.tgz"
   integrity sha512-OD+vkrcGbvlwkspUFDgMzsu1RXwdjNh83YgG/28lBnDzgslhCgxIqoExLlxsfTpIygp7fc+Hd3esloNwzkm2xA==

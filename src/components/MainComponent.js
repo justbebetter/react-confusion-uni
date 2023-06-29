@@ -6,7 +6,7 @@ import { DISHES } from "../shared/dishes";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Navigate, Route } from "react-router-dom";
 import Contact from "./ContactComponent";
 import { COMMENTS } from "../shared/comments";
 import { PROMOTIONS } from "../shared/promotions";
@@ -55,7 +55,7 @@ class Main extends Component {
       <div>
         <Header />
         <Routes>
-          <Route path="/home" component={HomePage} />
+          <Route path="/home" Component={HomePage} />
           <Route
             exact
             path="/menu"
